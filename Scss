@@ -1,0 +1,39 @@
++----------------+       1     +----------------+       1     +-----------------+
+|   Gymnasium    |-------------|    Member      |-------------|   Registration   |
+|----------------|      (M)     |----------------|      (M)     |-----------------|
+| Gymnasium ID (PK)|           | Member ID (PK)  |            | Registration ID (PK) |
+| Name           |            | Last Name      |            | Member ID (FK)  |
+| Address        |            | First Name     |            | Session ID (FK) |
+| Telephone Number|           | Address        |            +-----------------+
++----------------+            | Date of Birth  |
+                             | Gender         |
+                             | Gymnasium ID (FK)|
+                             +----------------+
+                                   |
+                                   |
+                                   |
+                                   |
+                              +----------------+          +----------------+
+                              |     Session    |          |     Coach      |
+                              |----------------|          |----------------|
+                              | Session ID (PK)|          | Coach ID (PK)  |
+                              | Type of Sport  |          | Last Name      |
+                              | Schedule       |          | First Name     |
+                              | Max Capacity   |          | Age            |
+                              +----------------+          | Specialty      |
+                                   |                        +----------------+
+                                   |                          |
+                                   |                          |
+                              +-----------------+              |
+                              |   SessionCoach  |              |
+                              |-----------------|              |
+                              | Session ID (FK) |              |
+                              | Coach ID (FK)   |              |
+                              +-----------------+              |
+
+
+Summary
+Gymnasium to Member: One-to-Many (One Gymnasium can have many Members)
+Session to Coach: Many-to-Many (One Session can have up to two Coaches, and one Coach can lead multiple Sessions)
+Member to Session: Many-to-Many (One Member can register for multiple Sessions, and one Session can have multiple Members)
+This ER model captures the essential elements required for managing gym memberships, sessions, and coaching schedules, and ensures a structured approach to handling registrations and gym operations.
